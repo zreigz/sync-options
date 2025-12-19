@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: example-job
+  annotations:
+    argocd.argoproj.io/sync-options: Force=true,Replace=true
+spec:
+  backoffLimit: 3
+  template:
+    metadata:
+      labels:
+        app: example-job
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: example
+          image: busybox:latest
+          command:
+            - sh
+            - -c
+            - echo "Job started" && sleep 5 && echo "Job finished"
