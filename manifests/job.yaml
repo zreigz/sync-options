@@ -12,7 +12,7 @@ spec:
         app: example-job
         a: name-jj
         b: c
-        d:cc
+        d: cc
     spec:
       restartPolicy: Never
       containers:
