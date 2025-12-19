@@ -10,6 +10,7 @@ spec:
     metadata:
       labels:
         app: example-job
+        dupa: dupa
 #        test: argocd
     spec:
       restartPolicy: Never
