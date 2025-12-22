@@ -2,16 +2,15 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: example-job
-  annotations:
-    argocd.argoproj.io/sync-options: Force=true,Replace=true
+#  annotations:
+#    argocd.argoproj.io/sync-options: Force=true,Replace=true
 spec:
   backoffLimit: 3
   template:
     metadata:
       labels:
         app: example-job
-        wp: pl
-        c: d
+        version: v1
     spec:
       restartPolicy: Never
       containers:
